@@ -1,0 +1,104 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffa500; /* Hover color */
+}
+
+/* CreateUser Component Styles */
+.create-user-container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.create-user-container input:focus {
+    border-color: #ffa500;
+}
+
+.create-user-container button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-user-container button:hover {
+    background-color: #ffa500;
+}
+
+/* Home Component Styles */
+.user-list {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-list li:last-child {
+    border-bottom: none;
+}

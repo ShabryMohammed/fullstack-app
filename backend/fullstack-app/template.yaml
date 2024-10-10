@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  fullstack-app
+
+  Sample SAM Template for fullstack-app
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 10
+  Api:
+    Cors: # Enable CORS globally for all API Gateway resources
+      AllowMethods: "'OPTIONS,GET,POST,DELETE'"
+      AllowOrigin: "'http://localhost:3000'" # Adjust as needed for specific origins
+      AllowHeaders: "'Content-Type'"
+
+Resources:
+  createUser:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/
+      Handler: user-management/createUser.createUser
+      Runtime: nodejs18.x
+      Architectures:
+      - x86_64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /createUser
+            Method: POST
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTable
+
+  getALLUsers:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/
+      Handler: user-management/getAllUsers.getALLUsers
+      Runtime: nodejs18.x
+      Architectures:
+      - x86_64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /getALLUsers
+            Method: GET
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTable
+
+  
+
+  UserTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Users
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
+Outputs:
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

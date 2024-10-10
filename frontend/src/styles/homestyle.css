@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e5e5e5;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Error Message Styles */
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffe5e5;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* User Table Styles */
+.user-table-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+}
+
+.user-table-container:hover {
+    transform: scale(1.01);
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.user-table thead {
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+}
+
+.user-table th, .user-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-right: 1px solid #444;
+}
+
+.user-table th:last-child {
+    border-right: none;
+}
+
+.user-table tbody tr {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.user-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.user-table td {
+    color: #555;
+    border-right: 1px solid #eee;
+}
+
+.user-table td:last-child {
+    border-right: none;
+}
+
+/* Action Button Styles */
+.user-table td button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 5px;
+}
+
+.user-table td button:hover {
+    background-color: #ffa500;
+    transform: translateY(-1px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .user-table-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .user-table th, .user-table td {
+        padding: 10px;
+    }
+    
+    .user-table {
+        font-size: 14px;
+    }
+}
+.user-table td button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-table td button:hover {
+    background-color: #ff1a1a;
+}
